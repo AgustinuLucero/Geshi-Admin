@@ -3,6 +3,8 @@ import ProtectedRoute from './utils/ProtectedRoute';
 import AdminLayout from './layouts/AdminLayout';
 import LoginPage from './pages/LoginPage';
 import UsersPage from './pages/UsersPage';
+import ContractsPage from './pages/ContractsPage';
+
 
 //esto es de prueba por ahora
 //const Login = () => <h2>Página de Login (ToDo)</h2>;
@@ -24,7 +26,7 @@ function App() {
             <Route element={<AdminLayout />}>
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/users" element={<UsersPage />} />
-                <Route path="/contracts" element={<h2>Contratos</h2>} />
+                <Route path="/contracts" element={<ContractsPage/>} />
                 <Route path="/activities" element={<h2>Actividades</h2>} />
             </Route>
         </Route>
