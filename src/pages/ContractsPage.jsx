@@ -150,6 +150,24 @@ const ContractsPage = () =>{
         }
     };
 
+    const handleToggleComplete = async (activityId, currentStatus) => {
+        try {
+            // nuevo estado
+            const newStatus = !currentStatus;
+
+            await apiClient.put(`/activities/${activityId}`, {
+                completado: newStatus
+            });
+
+            // recarga la lista de actividades para ver el cambio
+            const res = await apiClient.get(`/activities/contract/${currentContractInfo.id}`);
+            setContractActivities(res.data);
+
+        } catch (err) {
+            alert("Error al actualizar estado: " + err.message);
+        }
+    };
+
     //renderizo
 
     if (loading){
@@ -342,15 +360,12 @@ const ContractsPage = () =>{
                                 ) : (
                                     contractActivities.map(act => (
                                         <ListGroup.Item key={act.id} className="d-flex justify-content-between align-items-center">
-                                            {act.nombre}
-                                            {/* Aquí iría un botón para marcar como completada */}
-                                            {act.completada ? (
-                                                <span className="text-success">Completa</span>
-                                            ) : (
-                                                <Button variant="outline-secondary" size="sm" disabled>
-                                                    Pendiente
-                                                </Button>
-                                            )}
+                                            <span>{act.nombre}</span>
+                                            
+                                            {/* Lógica del botón interactivo */}
+                                            <Button  variant={act.completado ? "success" : "outline-secondary"} size="sm" onClick={() => handleToggleComplete(act.id, act.completado)}>
+                                                {act.completado ? "Completa" : "Pendiente"}
+                                            </Button>
                                         </ListGroup.Item>
                                     ))
                                 )}

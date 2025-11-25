@@ -21,7 +21,6 @@ const Sidebar = () =>{
                 <Nav.Link as={Link} to="/dashboard" className="text-white">Dashboard</Nav.Link>
                 <Nav.Link as={Link} to="/users" className="text-white">Usuarios</Nav.Link>
                 <Nav.Link as={Link} to="/contracts" className="text-white">Contratos</Nav.Link>
-                <Nav.Link as={Link} to="/activities" className="text-white">Actividades</Nav.Link>
                 
                 <div className="mt-auto">
                     <hr />
