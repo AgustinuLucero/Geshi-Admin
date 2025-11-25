@@ -146,7 +146,7 @@ const UsersPage = () =>{
 
 
             {/*modal de creacion */}
-            <Modal show = {showModal} onHide={() => setShowModal(False)} centered>
+            <Modal show = {showModal} onHide={() => setShowModal(false)} centered>
                 <Modal.Header closeButton>
                     <Modal.Title>Nuevo Cliente</Modal.Title>
                 </Modal.Header>

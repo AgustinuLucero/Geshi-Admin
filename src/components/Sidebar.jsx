@@ -1,5 +1,6 @@
 import {Nav} from 'react-bootstrap';
 import{Link} from 'react-router-dom'; // esto es para no recargar la pagina
+import logoGeshi from '../assets/LogoGESHI.png'
 
 const Sidebar = () =>{
     const handleLogout = () =>{
@@ -9,7 +10,12 @@ const Sidebar = () =>{
 
     return(
         <div className ="d-flex flex-column p-3 text-white bg-dark" style={{height: '100vh'}}>
-            <h4 className="mb-4 text-center border-bottom pb-2">GESHI Admin</h4>
+            <img
+                src={logoGeshi}
+                alt='Geshi Admin'
+                className="img-fluid"
+                style={{ maxWidth: '150px', maxHeight: '50px' }}
+            />
             <Nav className="flex-column gap-2">
                 
                 <Nav.Link as={Link} to="/dashboard" className="text-white">Dashboard</Nav.Link>
