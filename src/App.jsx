@@ -6,6 +6,7 @@ import UsersPage from './pages/UsersPage';
 import ContractsPage from './pages/ContractsPage';
 import DashboardPage from './pages/DashboardPage';
 
+
 //esto es de prueba por ahora
 //const Login = () => <h2>Página de Login (ToDo)</h2>;
 //const Dashboard = () => <h2>Bienvenido al Dashboard</h2>;
