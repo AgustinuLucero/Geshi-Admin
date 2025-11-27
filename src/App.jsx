@@ -9,8 +9,9 @@ import DashboardPage from './pages/DashboardPage';
 
 //esto es de prueba por ahora
 //const Login = () => <h2>Página de Login (ToDo)</h2>;
-const Dashboard = () => <h2>Bienvenido al Dashboard</h2>;
-const Users = () => <h2>Gestión de Usuarios (ToDo)</h2>;
+//const Dashboard = () => <h2>Bienvenido al Dashboard</h2>;
+//const Users = () => <h2>Gestión de Usuarios (ToDo)</h2>;
+
 function App() {
   
 
