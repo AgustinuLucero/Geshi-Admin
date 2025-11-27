@@ -4,6 +4,7 @@ import AdminLayout from './layouts/AdminLayout';
 import LoginPage from './pages/LoginPage';
 import UsersPage from './pages/UsersPage';
 import ContractsPage from './pages/ContractsPage';
+import DashboardPage from './pages/DashboardPage';
 
 
 //esto es de prueba por ahora
@@ -24,7 +25,7 @@ function App() {
         <Route element={<ProtectedRoute />}>
             {/* Todas estas usan el AdminLayout (Sidebar) */}
             <Route element={<AdminLayout />}>
-                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/dashboard" element={<DashboardPage />} />
                 <Route path="/users" element={<UsersPage />} />
                 <Route path="/contracts" element={<ContractsPage/>} />
                 <Route path="/activities" element={<h2>Actividades</h2>} />
