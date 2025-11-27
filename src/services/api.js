@@ -19,4 +19,30 @@ apiClient.interceptors.request.use(
   }
 );
 
+// para cuadno el token se vence
+apiClient.interceptors.response.use(
+  (response) => {
+    // si la respuesta es exitosa, la deja pasar
+    return response;
+  },
+  (error) => {
+    // error 401 no autorizado token vencido
+    if (error.response && error.response.status === 401) {
+      
+      // evito bucles infinitos si el error viene del login mismo
+      if (!window.location.pathname.includes('/login')) {
+        
+        alert("Tu sesión ha expirado. Por favor, inicia sesión nuevamente.");
+        
+        // borramos el token viejo
+        localStorage.removeItem('geshi-token');
+        
+        // redirigimos al login forzosamente
+        window.location.href = '/login';
+      }
+    }
+    return Promise.reject(error);
+  }
+);
+
 export default apiClient;
