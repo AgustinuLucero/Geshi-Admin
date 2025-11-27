@@ -117,7 +117,7 @@ const DashboardPage = () => {
                                     {searchResults.contratos.map(c => (
                                         <ListGroup.Item key={c.id}>
                                             <strong>{c.numero_contrato}</strong><br/>
-                                            <small className="text-muted">Cliente: {c.Clientes[0]?.nombre || 'N/A'}</small>
+                                            <small className="text-muted">Contrato: {c.id}</small>
                                         </ListGroup.Item>
                                     ))}
                                     {searchResults.contratos.length === 0 && <ListGroup.Item className="text-muted">No encontrado.</ListGroup.Item>}
@@ -131,7 +131,7 @@ const DashboardPage = () => {
                                     {searchResults.actividades.map(a => (
                                         <ListGroup.Item key={a.id}>
                                             <strong>{a.descripcion}</strong><br/>
-                                            <small className="text-muted">Contrato: {a.Contratos[0]?.numero_contrato}</small>
+                                            <small className="text-muted">Contrato: {a.Contratos?.id || 'N/A'}</small>
                                         </ListGroup.Item>
                                     ))}
                                     {searchResults.actividades.length === 0 && <ListGroup.Item className="text-muted">No encontrado.</ListGroup.Item>}
