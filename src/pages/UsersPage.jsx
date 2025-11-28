@@ -41,6 +41,7 @@ const UsersPage = () =>{
     const handleCreateUser = async(e) =>{
         e.preventDefault();
 
+        //convierto el cuil a numero porque esta como int en el backend
         const cuilAsNumber = parseInt(formData.cuil, 10);
 
         if (isNaN(cuilAsNumber)) {
@@ -85,7 +86,18 @@ const UsersPage = () =>{
         );
     }
 
-
+    //elimino el usuario
+    const handleDeleteUser = async (userId) => {
+        if (window.confirm("¿Estás seguro de que quieres eliminar a este usuario? Esta acción no se puede deshacer.")) {
+            try {
+                await apiClient.delete(`/users/${userId}`);
+                alert("Usuario eliminado.");
+                fetchUsers(); // recargo la tabla
+            } catch (err) {
+                alert("Error al eliminar: " + err.message);
+            }
+        }
+    };
 
     //renderizo la tabla
     return(
@@ -118,15 +130,18 @@ const UsersPage = () =>{
                             {users.map((user) => (
                                 <tr key={user.id}>
                                     <td>{user.nombre}</td>
-                                    <td>{user.mail}</td>
+                                    <td>{user.email}</td>
                                     <td>{user.cuil}</td>
-                                    <td>
-                                        <span className={`badge ${user.rol === 'admin' ? 'bg-danger' : 'bg-primary'}`}>
-                                            {user.rol}
-                                        </span>
-                                    </td>
+                                    <td>{user.rol || "sin rol"}</td>
+
                                     <td className="text-center">
-                                        <Button variant="outline-primary" size="sm">Editar</Button>
+                                        <Button 
+                                            variant="outline-danger"
+                                            size="sm"
+                                            onClick={() => handleDeleteUser(user.id)}
+                                        >
+                                            Eliminar
+                                        </Button>
                                     </td>
                                 </tr>
                             ))}

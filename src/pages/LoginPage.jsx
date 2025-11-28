@@ -38,12 +38,12 @@ const LoginPage = () =>{
     };
 
     return(
-        <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
+        <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }} >
             <Row className="w-100 justify-content-center">
                 <Col md={6} lg={4}>
                     <Card className="shadow">
                         <Card.Body className="p-4">
-                            <h3 className="text-center mb-4">GESHI Admin</h3>
+                            <h3 className="text-center mb-4">GESHI para administradores</h3>
                             
                             {error && <Alert variant="danger">{error}</Alert>}
 
@@ -74,6 +74,9 @@ const LoginPage = () =>{
                             </Form>
                         </Card.Body>
                     </Card>
+                        <div className="text-center mt-4 text-muted small">
+                            &copy; 2025 GESHI. Todos los derechos reservados.
+                        </div>
                 </Col>
             </Row>
         </Container>
