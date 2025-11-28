@@ -1,0 +1,123 @@
+/* Colores clave del estilo HISEG: */
+/* Verde principal: #6cb231 (o #7acc37) */
+/* Azul de Botón: #007bff (por defecto de Bootstrap, mantenemos el azul fuerte de la imagen) */
+
+/* Estilos para el Buscador (Panel de Control) */
+.dashboard-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.search-card {
+    /* Fondo blanco y sin borde visible, solo sombra */
+    border: none !important;
+    border-radius: 5px;
+}
+
+.search-input-mimic {
+    /* Quitar el color azul al hacer foco para un look más limpio */
+    border-radius: 4px !important;
+    height: 40px;
+}
+
+.search-button-mimic {
+    /* Botón azul fuerte como en la imagen */
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+    font-weight: 600;
+    padding: 8px 15px;
+}
+
+/* ---------------------------------------------------- */
+/* Estilos para las Tarjetas de Estadísticas (Mini-cards) */
+/* ---------------------------------------------------- */
+
+.stat-card {
+    /* Eliminar el borde y usar el color de fondo de la imagen */
+    border: none !important;
+    padding: 15px 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+.stat-label {
+    /* Nombre de la estadística (Ej: Clientes Activos) */
+    font-size: 1rem;
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    /* El número grande (Ej: 2) */
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Colores Específicos */
+.stat-blue {
+    background-color: #e6f3ff !important; /* Azul claro */
+}
+.stat-blue .stat-value {
+    color: #007bff; /* Azul fuerte para el número */
+}
+
+.stat-green {
+    background-color: #e8f5e9 !important; /* Verde claro */
+}
+.stat-green .stat-value {
+    color: #4caf50; /* Verde fuerte para el número */
+}
+
+.stat-yellow {
+    background-color: #fff8e1 !important; /* Amarillo claro */
+}
+.stat-yellow .stat-value {
+    color: #ffc107; /* Amarillo/naranja para el número */
+}
+
+/* ---------------------------------------------------- */
+/* Estilos para la Barra de Progreso (Rendimiento) */
+/* ---------------------------------------------------- */
+
+.performance-card {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.performance-header {
+    background-color: #f8f9fa !important; /* Fondo ligeramente gris para el header */
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.performance-summary h5 {
+    font-weight: 600;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.completion-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.progress-bar-mimic {
+    height: 30px !important;
+    font-size: 1.2rem !important;
+    font-weight: 600;
+    border-radius: 5px;
+    /* Aplicar el color verde fuerte de HISEG a la barra */
+    background-color: #d1e7dd !important; /* Fondo gris para la parte sin completar */
+}
+
+.progress-bar-mimic .progress-bar {
+    background-color: #6cb231 !important; /* Verde HISEG para el progreso */
+    /* Gradiente opcional para el estilo 3D del login */
+    /* background-image: linear-gradient(to bottom, #7acc37 0%, #6cb231 100%) !important; */
+}
