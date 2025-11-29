@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, ProgressBar, Spinner, Alert,Form, ListGroup,Button } from 'react-bootstrap';
 import apiClient from '../services/api';
-import '../styles/DashboardPage.css';
+
 
 const DashboardPage = () => {
     const [stats, setStats] = useState(null);
