@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //instancia axios
 const apiClient = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://backendgeshi.onrender.com/api',
 });
 
 //aca inyecto el token en cada peticion
