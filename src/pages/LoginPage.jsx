@@ -40,34 +40,32 @@ const LoginPage = () =>{
 
     return(
         <div className="login-page-container">
-            
-            {/* Franja Superior Verde (Simulando el gradiente de la imagen) */}
-            <div className="top-green-strip"></div>
 
-            {/* Contenedor para el logo centrado (ajustado para la posición de la imagen) */}
-            <div className="logo-container">
-                <div className="logo-card">
-                    {/* En la imagen se ve un logo diferente, pero usamos el importado */}
+        <div className="top-green-strip"></div>
+
+        {/* contenedor para el logo centrado*/}
+         <div className="logo-container">
+            <div className="logo-card">
+
                     <img src={logoGeshi} alt="Logo del Sistema" className="system-logo" />
-                    <span className="logo-caption">SOLUCIONES PARA EMPRESAS</span>
-                </div>
+                <span className="logo-caption">SOLUCIONES PARA EMPRESAS</span>
             </div>
+         </div>
 
-            {/* Contenedor para la tarjeta de login, centrado verticalmente con la ayuda del flexbox del div principal */}
+
             <Container className="login-form-wrapper" >
                 <Row className="w-100 justify-content-center">
                     <Col md={6} lg={4}>
-                        {/* Usamos Card de Bootstrap pero le aplicamos clases de estilo de la imagen */}
                         <Card className="shadow login-card-mimic">
                             <Card.Body className="p-4">
                                 <h3 className="text-center mb-4 login-title-mimic">Ingreso al Sistema</h3>
 
                                 <Form onSubmit={handleSubmit}>
                                     <Form.Group className="mb-3">
-                                        {/* Form.Label se quita para imitar el diseño, pero mantenemos el Form.Group */}
+
                                         <Form.Control 
                                             type="email" 
-                                            placeholder="Usuario" // Placeholder para imitar el texto dentro del input
+                                            placeholder="Usuario" 
                                             value={email}
                                             onChange={(e) => setEmail(e.target.value)}
                                             required
@@ -75,23 +73,23 @@ const LoginPage = () =>{
                                     </Form.Group>
 
                                     <Form.Group className="mb-4">
-                                        {/* Form.Label se quita para imitar el diseño */}
+
                                         <Form.Control 
                                             type="password" 
-                                            placeholder="Contraseña" // Placeholder para imitar el texto dentro del input
+                                            placeholder="Contraseña" 
                                             value={password}
                                             onChange={(e) => setPassword(e.target.value)}
                                             required
                                         />
                                     </Form.Group>
 
-                                    {/* Contenedor para alinear el botón a la derecha */}
+
                                     <div className="d-flex justify-content-end">
-                                        {/* Aplicamos una clase custom al botón para el color y estilo */}
                                         <Button type="submit" className="btn-ingresar-mimic">
                                             Ingresar
                                         </Button>
                                     </div>
+
                                 </Form>
                             </Card.Body>
                         </Card>
