@@ -107,7 +107,6 @@ const DashboardPage = () => {
                             <Col md={4}>
                                 <h6>Clientes ({searchResults.clientes?.length || 0})</h6>
                                 <ListGroup variant="flush">
-                                    {/* Agregamos '?.' y '|| []' para evitar el crash */}
                                     {(searchResults.clientes || []).map(c => (
                                         <ListGroup.Item key={c.id}>
                                             <strong>{c.nombre}</strong> <small className="text-muted">({c.cuil})</small>
